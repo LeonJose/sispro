@@ -73,8 +73,8 @@ namespace SisPro
         {
             string instruccion = "update impresora set nombre=@nom where Idimpresora=@id";
             SqlCommand comandosql = new SqlCommand(instruccion);
-            comandosql.Parameters.Add("@nom", _nombre);
-            comandosql.Parameters.Add("@id",_idimpresora);
+            comandosql.Parameters.Add(new SqlParameter("@nom", _nombre));
+            comandosql.Parameters.Add(new SqlParameter("@id",_idimpresora));
             return EjecutarComando(comandosql);
         }
 
