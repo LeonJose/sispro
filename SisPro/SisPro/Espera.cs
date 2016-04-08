@@ -79,7 +79,7 @@ namespace SisPro
       public bool AgregarEspera()
       {
           string instruccion = @"insert into Espera(esp_nombre, esp_numero, esp_fecha, esp_horaLlegada, esp_horaAtencion, esp_matricula) values 
-  (@nombre, @num, @fec, @hLlegada, @hAtendido,@mat)";
+                                (@nombre, @num, @fec, @hLlegada, @hAtendido,@mat)";
           SqlCommand comandoSql = new SqlCommand(instruccion);
           comandoSql.Parameters.Add(new SqlParameter("@nombre", _nombre));
           comandoSql.Parameters.Add(new SqlParameter("@num", _numero));
