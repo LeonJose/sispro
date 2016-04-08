@@ -11,7 +11,7 @@ namespace SisPro
     class Espera : Conexion
     {
       
-        #region Atributos
+      #region Atributos
       private int _id;
       private string _nombre;
       private string _numero;
