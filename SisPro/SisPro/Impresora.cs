@@ -75,7 +75,7 @@ namespace SisPro
             SqlCommand comandosql = new SqlCommand(instruccion);
             comandosql.Parameters.Add(new SqlParameter("@nom", _nombre));
             comandosql.Parameters.Add(new SqlParameter("@id",_idimpresora));
-            return EjecutarComando(comandosql);jgfjhgfhjfjhkghgvjc
+            return EjecutarComando(comandosql);
         }
 
         #endregion
