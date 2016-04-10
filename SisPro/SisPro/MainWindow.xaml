@@ -2,7 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:Properties="clr-namespace:SisPro.Properties" x:Class="SisPro.MainWindow"
-        Title="MainWindow" Height="646.074" Width="994.821" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+        Title="MainWindow" Height="646.074" Width="994.821" WindowStartupLocation="CenterScreen" WindowState="Maximized" Background="#FFF2FFF2" Loaded="Window_Loaded_1">
     <Grid Background="#FFF2FFF2" RenderTransformOrigin="0.5,0.5" Margin="-3,0,2,169" Opacity="0.8" HorizontalAlignment="Center" VerticalAlignment="Center" Height="446" Width="1000">
         <GroupBox Header="Registro para obtener tu turno " HorizontalAlignment="Center" Margin="98,120,48,0" VerticalAlignment="Top" Height="272" Width="854" FontFamily="Tw Cen MT Condensed Extra Bold" Foreground="#FF09090A" BorderBrush="#FF266E04" FontSize="18" BorderThickness="3">
             <ComboBox HorizontalAlignment="Left" Height="246" VerticalAlignment="Top" Width="842"/>
@@ -20,7 +20,7 @@
         <Rectangle x:Name="rt_imagen" HorizontalAlignment="Center" Height="82" Margin="22,19,0,0" Stroke="#FF196820" VerticalAlignment="Top" Width="873" RadiusX="6" RadiusY="6" StrokeThickness="3"/>
         <RadioButton x:Name="rbnEstudiante" Content="Soy Estudiante" HorizontalAlignment="Left" Margin="352,289,0,0" VerticalAlignment="Top" IsChecked="True" Checked="rbnEstudiante_Checked" FontSize="14"/>
         <RadioButton x:Name="rbnOtro" Content="Otro" HorizontalAlignment="Left" Margin="526,289,0,0" VerticalAlignment="Top" Checked="rbnOtro_Checked" FontSize="14"/>
-        <ComboBox HorizontalAlignment="Left" Margin="352,243,0,0" VerticalAlignment="Top" Width="221" RenderTransformOrigin="0.608,-2.364"/>
+        <ComboBox x:Name="cmbDeptos" HorizontalAlignment="Left" Margin="352,243,0,0" VerticalAlignment="Top" Width="221" RenderTransformOrigin="0.608,-2.364" Loaded="ComboBox_Loaded_1"/>
 
 
     </Grid>

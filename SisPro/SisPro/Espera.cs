@@ -19,11 +19,18 @@ namespace SisPro
       private DateTime _horaLlegada;
       private DateTime _horaAtencion;
       private string _matricula;
+      private Departamento _departamento;
      // private string impresora = "Microsoft XPS Document Writer";
       private string impresora=new Impresora(1).Nombre;
       #endregion
 
         #region propiedades
+
+      public Departamento Departamento
+      {
+          get { return _departamento; }
+          set { _departamento = value; }
+      }
 
       public int ID
       {
@@ -72,14 +79,15 @@ namespace SisPro
           _horaLlegada = new DateTime();
           _horaAtencion = new DateTime();
           _matricula = "";
+          _departamento = new Departamento();
       }
         #endregion 
         #region Metodos
 
       public bool AgregarEspera()
       {
-          string instruccion = @"insert into Espera(esp_nombre, esp_numero, esp_fecha, esp_horaLlegada, esp_horaAtencion, esp_matricula) values 
-                                (@nombre, @num, @fec, @hLlegada, @hAtendido,@mat)";
+          string instruccion = @"insert into Espera(esp_nombre, esp_numero, esp_fecha, esp_horaLlegada, esp_horaAtencion, esp_matricula, esp_dep_id) values 
+                                (@nombre, @num, @fec, @hLlegada, @hAtendido,@mat, @dept)";
           SqlCommand comandoSql = new SqlCommand(instruccion);
           comandoSql.Parameters.Add(new SqlParameter("@nombre", _nombre));
           comandoSql.Parameters.Add(new SqlParameter("@num", _numero));
@@ -87,6 +95,7 @@ namespace SisPro
           comandoSql.Parameters.Add(new SqlParameter("@hLlegada", _horaLlegada));
           comandoSql.Parameters.Add(new SqlParameter("@hAtendido", _horaAtencion));
           comandoSql.Parameters.Add(new SqlParameter("@mat", _matricula));
+          comandoSql.Parameters.Add(new SqlParameter("@dept", _departamento.IdDepto));
           return EjecutarComando(comandoSql);
       }
 
@@ -111,6 +120,8 @@ namespace SisPro
                   ticket.AddDatos("Matricula:", "");
                   ticket.AddDatos("", Matricula);
               }
+              ticket.AddDatos("Departamento:  ", "");
+              ticket.AddDatos("", Departamento.NombreDepto);
               ticket.AddDatos("Fecha:", "");
               ticket.AddDatos("", Fecha.ToString("MM-dd-yyyy"));
               ticket.AddDatos("Hora:", "");

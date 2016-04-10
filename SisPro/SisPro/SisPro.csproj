@@ -61,6 +61,7 @@
       <DependentUpon>Administrador.xaml</DependentUpon>
     </Compile>
     <Compile Include="Alumno.cs" />
+    <Compile Include="Departamento.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="Impresora.cs" />
     <Compile Include="Ticket.cs" />

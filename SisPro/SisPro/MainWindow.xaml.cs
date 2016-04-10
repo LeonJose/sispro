@@ -29,8 +29,14 @@ namespace SisPro
         public MainWindow()
         {
             InitializeComponent();
+            inicializarForma();
+        }
+        public void inicializarForma()
+        {
             headerlogo();
             txtNombre.Focus();
+            cmbDeptos.ItemsSource = Listados.Departamentos();
+            cmbDeptos.SelectedIndex = 0;
         }
         private void headerlogo()
         {
@@ -56,6 +62,7 @@ namespace SisPro
         */
         private void btnRegistro_Click_2(object sender, RoutedEventArgs e)
         {
+            Departamento d = (Departamento)cmbDeptos.SelectedItem;
             Espera es = new Espera();
             if (matricula)
             {
@@ -70,6 +77,7 @@ namespace SisPro
                     es.HoraLlegada = DateTime.Now;
                     es.HoraAtencion = DateTime.Now;
                     es.Matricula = a.Matricula;
+                    es.Departamento = d;
                     if (es.AgregarEspera())
                     {
                         es.GenerarTicket();
@@ -103,6 +111,7 @@ namespace SisPro
                     es.Fecha = DateTime.Now;
                     es.HoraLlegada = DateTime.Now;
                     es.HoraAtencion = DateTime.Now;
+                    es.Departamento = d;
                     if (es.AgregarEspera())
                     {
                         es.GenerarTicket();
@@ -139,6 +148,15 @@ namespace SisPro
         {
             if (e.Key == System.Windows.Input.Key.Enter)
                 btnRegistro.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+        }
+
+        private void ComboBox_Loaded_1(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void Window_Loaded_1(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
