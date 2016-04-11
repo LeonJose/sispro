@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Globalization;
 
+
 namespace SisPro
 {
     /// <summary>
@@ -81,7 +82,6 @@ namespace SisPro
                     if (es.AgregarEspera())
                     {
                         es.GenerarTicket();
-
                         limpiartxt();
                     }
                     else
@@ -136,12 +136,14 @@ namespace SisPro
         {
             lbltitulo.Content = "Ingrese su Matricula";
             matricula = true;
+            txtNombre.Focus();
         }
 
         private void rbnOtro_Checked(object sender, RoutedEventArgs e)
         {
             lbltitulo.Content = "Ingrese su Nombre";
             matricula = false;
+            txtNombre.Focus();
         }
 
         private void txtNombre_KeyUp(object sender, KeyEventArgs e)
