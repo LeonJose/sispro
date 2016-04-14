@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace SisPro
 {
     /// <summary>
-    /// Lógica de interacción para Login.xaml
+    /// Lógica de interacción para Atencion.xaml
     /// </summary>
-    public partial class Login : Window
+    public partial class Atencion : Window
     {
-        public Login()
+        public Atencion()
         {
             InitializeComponent();
             headerlogo();
@@ -30,7 +30,7 @@ namespace SisPro
             Image _image = new Image();
             BitmapImage _bi = new BitmapImage();
             _bi.BeginInit();
-            _bi.UriSource = new System.Uri("pack://application:,,,/Recursos/imagenes/4.jpg");
+            _bi.UriSource = new System.Uri("pack://application:,,,/Recursos/imagenes/1.png");
             _bi.EndInit();
             _image.Source = _bi;
             ImageBrush _ib = new ImageBrush();

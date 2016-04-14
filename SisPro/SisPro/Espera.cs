@@ -20,8 +20,9 @@ namespace SisPro
       private DateTime _horaAtencion;
       private string _matricula;
       private Departamento _departamento;
+      private bool _atendido;
      // private string impresora = "Microsoft XPS Document Writer";
-      private string impresora=new Impresora(1).Nombre;
+      private string impresora=new Configuracion(1).Impresora;
       #endregion
 
         #region propiedades
@@ -67,6 +68,12 @@ namespace SisPro
           get { return _matricula; }
           set { _matricula = value; }
       }
+
+      public bool Atendido
+      {
+          get { return _atendido; }
+          set { _atendido = value; }
+      }
         #endregion
 
         #region constructor
@@ -80,9 +87,16 @@ namespace SisPro
           _horaAtencion = new DateTime();
           _matricula = "";
           _departamento = new Departamento();
+          _atendido = false;
       }
         #endregion 
         #region Metodos
+
+
+        public Espera(int id)
+        {
+            string consulta = "";
+        }
 
       public bool AgregarEspera()
       {
@@ -97,6 +111,14 @@ namespace SisPro
           comandoSql.Parameters.Add(new SqlParameter("@mat", _matricula));
           comandoSql.Parameters.Add(new SqlParameter("@dept", _departamento.IdDepto));
           return EjecutarComando(comandoSql);
+      }
+
+      public bool AtenderEspera()
+      {
+          string instruccion = "update Espera set esp_atendido=1 where esp_id=" + _id;
+          SqlCommand comando = new SqlCommand(instruccion);
+
+          return EjecutarComando(comando);
       }
 
 

@@ -13,7 +13,7 @@
         <Button x:Name="btnRegistro" Content="Registrar" HorizontalAlignment="Left" Margin="163,555,0,0" VerticalAlignment="Top" Width="155" Height="60" Foreground="White" FontFamily="Trebuchet MS" Background="#FF0A7613" BorderBrush="#FF133659" Click="btnRegistro_Click_2" BorderThickness="2" FontSize="16" FontWeight="Bold" UseLayoutRounding="False" RenderTransformOrigin="0.5,0.5" Grid.Column="1"/>
         <Label x:Name="lbltitulo" Content="Ingresa tu matricula " HorizontalAlignment="Center" Margin="370,344,339,0" VerticalAlignment="Top" FontSize="20" Foreground="#FF2828F7" Grid.ColumnSpan="2" Width="291"/>
         <TextBox x:Name="txtNombre" HorizontalAlignment="Center" Height="32" Margin="370,381,268,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="362" BorderBrush="#FF123064" BorderThickness="2" KeyUp="txtNombre_KeyUp" Grid.ColumnSpan="2" FontSize="16"/>
-        <Rectangle HorizontalAlignment="Center" Height="163" Stroke="#FF12EA74" VerticalAlignment="Bottom" Width="904" Margin="58,0,38,622" Grid.ColumnSpan="2">
+        <Rectangle HorizontalAlignment="Center" Height="163" Stroke="#FF12EA74" VerticalAlignment="Bottom" Width="904" Margin="58,0,38,622" Grid.ColumnSpan="2" RadiusX="6" RadiusY="6">
             <Rectangle.DataContext>
                 <Properties:Resources/>
             </Rectangle.DataContext>

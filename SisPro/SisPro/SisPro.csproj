@@ -57,19 +57,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Administrador.xaml.cs">
-      <DependentUpon>Administrador.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Alumno.cs" />
+    <Compile Include="Atencion.xaml.cs">
+      <DependentUpon>Atencion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AtencionCliente.cs" />
+    <Compile Include="Caja.cs" />
     <Compile Include="Departamento.cs" />
     <Compile Include="Conexion.cs" />
-    <Compile Include="Impresora.cs" />
+    <Compile Include="Configuracion.cs" />
+    <Compile Include="Empleado.cs" />
+    <Compile Include="Menu.xaml.cs">
+      <DependentUpon>Menu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Ticket.cs" />
-    <Page Include="Administrador.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="frmAlumno.xaml">
+    <Page Include="Atencion.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -86,9 +88,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Espera.cs" />
-    <Compile Include="frmAlumno.xaml.cs">
-      <DependentUpon>frmAlumno.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Listados.cs" />
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
@@ -97,6 +96,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Menu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -133,6 +136,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Recursos\Imagenes\logotipo.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recursos\Imagenes\3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recursos\Imagenes\4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recursos\Imagenes\5.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

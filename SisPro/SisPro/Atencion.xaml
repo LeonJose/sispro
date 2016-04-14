@@ -1,0 +1,32 @@
+﻿<Window x:Class="SisPro.Atencion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Atencion" Height="694.346" Width="1298.586" Background="#FFF2FFF2" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Grid Margin="0,-3,0,3">
+        <Rectangle HorizontalAlignment="Center" Height="151" Margin="180,10,163,0" Stroke="#FF31BD12" VerticalAlignment="Top" Width="948" RadiusX="6" RadiusY="6"/>
+        <Rectangle x:Name="rt_imagen" HorizontalAlignment="Center" Height="130" Margin="194,19,175,0" Stroke="#FF187DF7" VerticalAlignment="Top" Width="922" RadiusX="6" RadiusY="6"/>
+        <Rectangle HorizontalAlignment="Left" Height="409" Margin="149,238,0,-56" Stroke="#FF187DE1" VerticalAlignment="Top" Width="326" RadiusX="6" RadiusY="6"/>
+        <Label Content="Nombre" HorizontalAlignment="Left" Margin="170,253,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#FF2828F7"/>
+        <TextBox x:Name="txtnombre" HorizontalAlignment="Left" Height="27" Margin="170,290,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" FontSize="20"/>
+        <Label Content="Asunto" HorizontalAlignment="Left" Margin="170,331,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#FF2828F7"/>
+        <TextBox x:Name="txtasunto" HorizontalAlignment="Left" Height="125" Margin="170,373,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" FontSize="20"/>
+        <CheckBox x:Name="cbxalumno" Content="Alumno" HorizontalAlignment="Left" Margin="194,520,0,0" VerticalAlignment="Top" FontSize="20" Width="94" BorderBrush="#FF2828F7" Foreground="#FF2828F7"/>
+        <CheckBox x:Name="cbxotro" Content="Otro" HorizontalAlignment="Left" Margin="381,520,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#FF2828F7"/>
+        <Button Content="Enviar Datos" HorizontalAlignment="Left" Height="52" Margin="253,586,0,0" VerticalAlignment="Top" Width="212" FontSize="20" Background="#FF39990C" Foreground="WhiteSmoke"/>
+        <DataGrid HorizontalAlignment="Left" Height="409" Margin="540,238,0,0" VerticalAlignment="Top" Width="741" Background="#FFF2FFF2" BorderBrush="#FF187DF5">
+            <DataGrid.Columns>
+                <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Id" Width="35"/>
+                <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Nombre" Width="150"/>
+                <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Numero" Width="70"/>
+                <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Fecha" Width="70"/>
+                <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Hora Llegada" Width="80"/>
+                <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Hora Atencion" Width="85"/>
+                <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Matricula" Width="80"/>
+                <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Esp_Depto" Width="80"/>
+                <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Esp_Atendio" Width="80"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Siguiente" HorizontalAlignment="Left" Height="52" Margin="1069,181,0,0" VerticalAlignment="Top" Width="212" FontSize="20" Background="#FF39990C" Foreground="WhiteSmoke"/>
+
+    </Grid>
+</Window>

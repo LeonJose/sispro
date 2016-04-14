@@ -1,0 +1,11 @@
+﻿<Window x:Class="SisPro.Menu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Menu" Height="712.368" Width="1137.455" Background="#FFF2FFF2" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Grid>
+        <Button x:Name="btncajas" Content="Caja" HorizontalAlignment="Center" Margin="154,221,564,0" VerticalAlignment="Top" Width="290" Height="200" Background="White" BorderBrush="#FF12EA74" Foreground="#FF2828F7" FontSize="25" FontFamily="Showcard Gothic"/>
+        <Button x:Name="btnservicios" Content="Servicios Escolares" HorizontalAlignment="Center" Margin="654,221,64,0" VerticalAlignment="Top" Width="290" Height="200" Background="White" BorderBrush="#FF12EA74" Foreground="#FF2828F7" FontSize="25" FontFamily="Showcard Gothic"/>
+        <Rectangle x:Name="rt_imagen" HorizontalAlignment="Center" Height="181" Margin="76,20,65,0" Stroke="#FF12EA74" VerticalAlignment="Top" Width="988"/>
+
+    </Grid>
+</Window>
