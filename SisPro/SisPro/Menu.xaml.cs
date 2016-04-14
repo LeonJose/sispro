@@ -15,30 +15,26 @@ using System.Windows.Shapes;
 namespace SisPro
 {
     /// <summary>
-    /// Lógica de interacción para Login.xaml
+    /// Lógica de interacción para Menu.xaml
     /// </summary>
-    public partial class Login : Window
+    public partial class Menu : Window
     {
-        public Login()
+        public Menu()
         {
             InitializeComponent();
-<<<<<<< HEAD
-=======
-            headerlogo();
-            txtnombre.Focus();
+            headerfondo();
         }
-        private void headerlogo()
+        private void headerfondo()
         {
             Image _image = new Image();
             BitmapImage _bi = new BitmapImage();
             _bi.BeginInit();
-            _bi.UriSource = new System.Uri("pack://application:,,,/Recursos/imagenes/4.jpg");
+            _bi.UriSource = new System.Uri("pack://application:,,,/Recursos/imagenes/5.png");
             _bi.EndInit();
             _image.Source = _bi;
             ImageBrush _ib = new ImageBrush();
             _ib.ImageSource = _bi;
             rt_imagen.Fill = _ib;
->>>>>>> 133b3c56c83ea5ef1f50a2bddae7a13434519337
         }
     }
 }

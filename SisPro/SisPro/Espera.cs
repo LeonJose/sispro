@@ -20,8 +20,14 @@ namespace SisPro
       private DateTime _horaAtencion;
       private string _matricula;
       private Departamento _departamento;
+<<<<<<< HEAD
      // private string impresora = "Microsoft XPS Document Writer";
       private string impresora=new Impresora(1).Nombre;
+=======
+      private bool _atendido;
+     // private string impresora = "Microsoft XPS Document Writer";
+      private string impresora=new Configuracion(1).Impresora;
+>>>>>>> 133b3c56c83ea5ef1f50a2bddae7a13434519337
       #endregion
 
         #region propiedades
@@ -67,6 +73,15 @@ namespace SisPro
           get { return _matricula; }
           set { _matricula = value; }
       }
+<<<<<<< HEAD
+=======
+
+      public bool Atendido
+      {
+          get { return _atendido; }
+          set { _atendido = value; }
+      }
+>>>>>>> 133b3c56c83ea5ef1f50a2bddae7a13434519337
         #endregion
 
         #region constructor
@@ -80,10 +95,23 @@ namespace SisPro
           _horaAtencion = new DateTime();
           _matricula = "";
           _departamento = new Departamento();
+<<<<<<< HEAD
+=======
+          _atendido = false;
+>>>>>>> 133b3c56c83ea5ef1f50a2bddae7a13434519337
       }
         #endregion 
         #region Metodos
 
+<<<<<<< HEAD
+=======
+
+        public Espera(int id)
+        {
+            string consulta = "";
+        }
+
+>>>>>>> 133b3c56c83ea5ef1f50a2bddae7a13434519337
       public bool AgregarEspera()
       {
           string instruccion = @"insert into Espera(esp_nombre, esp_numero, esp_fecha, esp_horaLlegada, esp_horaAtencion, esp_matricula, esp_dep_id) values 
@@ -99,6 +127,17 @@ namespace SisPro
           return EjecutarComando(comandoSql);
       }
 
+<<<<<<< HEAD
+=======
+      public bool AtenderEspera()
+      {
+          string instruccion = "update Espera set esp_atendido=1 where esp_id=" + _id;
+          SqlCommand comando = new SqlCommand(instruccion);
+
+          return EjecutarComando(comando);
+      }
+
+>>>>>>> 133b3c56c83ea5ef1f50a2bddae7a13434519337
 
       public void GenerarTicket()
       {
