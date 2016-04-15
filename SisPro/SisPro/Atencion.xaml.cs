@@ -34,10 +34,9 @@ namespace SisPro
         {
             headerlogo();
             txtNombre.Focus();
+            RefrescarGrid();
             //ActualizarListaDeEspera();
-            lista = Listados.ListaDeEspera();
-            if (lista.Count > 0)
-                dgvListaEspera.ItemsSource = lista;
+            
         }
         private void headerlogo()
         {
@@ -52,7 +51,13 @@ namespace SisPro
             rt_imagen.Fill = _ib;
         }
 
-
+        public void RefrescarGrid()
+        {
+            dgvListaEspera.Items.Clear();
+            lista = Listados.ListaDeEspera();
+            if (lista.Count > 0)
+                dgvListaEspera.ItemsSource = lista;
+        }
         
 
         private void btnSiguiente_Click(object sender, RoutedEventArgs e)
@@ -64,11 +69,9 @@ namespace SisPro
                 txtNombre.Text = es.Nombre;
                 txtHora.Text = es.HoraLlegada.ToString("HH:mm:ss");
                 inicio = DateTime.Now;
-                lista = Listados.ListaDeEspera();
                 es.Atendido = true;
                 es.AtenderEspera();
-                if (lista.Count > 0)
-                    dgvListaEspera.ItemsSource = lista;
+                RefrescarGrid();
 
                 Globales.conf.Espera = es.ID;
                 Globales.conf.EditarConfiguracion();
@@ -136,9 +139,7 @@ namespace SisPro
 
                     Listados.LlamarSiguiente(0);
 
-                    lista = Listados.ListaDeEspera();
-                    if (lista.Count > 0)
-                        dgvListaEspera.ItemsSource = lista;
+                    RefrescarGrid();
 
                 }
                 else

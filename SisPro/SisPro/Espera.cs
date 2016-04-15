@@ -141,7 +141,7 @@ namespace SisPro
 
       public bool AtenderEspera()
       {
-          string instruccion = "update Espera set esp_atendido="+_atendido+" where esp_id=" + _id;
+          string instruccion = "update Espera set esp_atendido="+Convert.ToInt32(_atendido)+" where esp_id=" + _id;
           SqlCommand comando = new SqlCommand(instruccion);
 
           return EjecutarComando(comando);
