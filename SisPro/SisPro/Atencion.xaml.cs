@@ -72,6 +72,8 @@ namespace SisPro
 
                 Globales.conf.Espera = es.ID;
                 Globales.conf.EditarConfiguracion();
+
+                Listados.LlamarSiguiente(es.ID);
             }
             else
             {
@@ -131,6 +133,8 @@ namespace SisPro
                     es.AtenderEspera();
                     Globales.conf.Espera = 0;
                     Globales.conf.EditarConfiguracion();
+
+                    Listados.LlamarSiguiente(0);
 
                     lista = Listados.ListaDeEspera();
                     if (lista.Count > 0)

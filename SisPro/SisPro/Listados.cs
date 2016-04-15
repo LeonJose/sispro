@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace SisPro
 {
@@ -74,6 +75,13 @@ namespace SisPro
                 }
             }
             return esp;
+        }
+
+        public static void LlamarSiguiente(int espera)
+        {
+            string instruccion = "update siguiente set sig_espera="+espera+" where sig_id=1";
+            SqlCommand comando = new SqlCommand(instruccion);
+            EjecutarComando(comando);
         }
     }
 }
