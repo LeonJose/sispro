@@ -160,6 +160,11 @@ namespace SisPro
         {
 
         }
+
+        private void txtNombre_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
 

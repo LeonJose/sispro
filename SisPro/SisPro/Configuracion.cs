@@ -8,13 +8,12 @@ using System.Data.SqlClient;
 
 namespace SisPro
 {
-    class Configuracion : Conexion
+    public class Configuracion : Conexion
     {
         #region Atributos
 
         private int _id;
         private string _impresora;
-        private Caja _caja;
         private int _espera;
 
         #endregion 
@@ -32,11 +31,6 @@ namespace SisPro
             set { _impresora = value; }
         }
 
-        public Caja Caja
-        {
-            get { return _caja; }
-            set { _caja = value; }
-        }
 
         public int Espera
         {
@@ -52,26 +46,23 @@ namespace SisPro
         {
             _id = 0;
             _impresora = "";
-            _caja = new Caja();
             _espera = 0;
         }
 
         public Configuracion(int id)
         {
-            string instruccion = "select conf_impresora, conf_caja_id, conf_espera from configuraciones where conf_id=" + id;
+            string instruccion = "select conf_impresora, conf_espera from configuracion where conf_id=" + id;
             DataRow registro = LeerRegistro(instruccion);
             if (registro != null)
             {
                 _id = id;
                 _impresora = registro["conf_impresora"].ToString();
-                _caja = new Caja(int.Parse(registro["conf_caja_id"].ToString()));
                 _espera = int.Parse(registro["conf_espera"].ToString());
             }
             else
             {
                 _id = 0;
                 _impresora = "";
-                _caja = new Caja();
                 _espera = 0;
             }
         }
@@ -82,20 +73,18 @@ namespace SisPro
 
         public bool AgregarConfiguracion()
         {
-            string instruccion = "insert into configuracion(conf_impresora, conf_caja_id, conf_espera)values(@impresora,@caja,@espera)";
+            string instruccion = "insert into configuracion(conf_impresora, conf_espera)values(@impresora,@caja,@espera)";
             SqlCommand comandosql = new SqlCommand(instruccion);
             comandosql.Parameters.Add(new SqlParameter("@impresora", _impresora));
-            comandosql.Parameters.Add(new SqlParameter("@caja", _caja.Id));
             comandosql.Parameters.Add(new SqlParameter("@espera", _espera));
             return EjecutarComando(comandosql);
         }
 
         public bool EditarConfiguracion()
         {
-            string instruccion = "update configuracion set conf_impresora=@impresora, conf_caja_id=@caja, conf_espera=@espera where conf_id=@id";
+            string instruccion = "update configuracion set conf_impresora=@impresora, conf_espera=@espera where conf_id=@id";
             SqlCommand comandosql = new SqlCommand(instruccion);
             comandosql.Parameters.Add(new SqlParameter("@impresora", _impresora));
-            comandosql.Parameters.Add(new SqlParameter("@caja", _caja.Id));
             comandosql.Parameters.Add(new SqlParameter("@espera", _espera));
             comandosql.Parameters.Add(new SqlParameter("@id", _id));
             return EjecutarComando(comandosql);

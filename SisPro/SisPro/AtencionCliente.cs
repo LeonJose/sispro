@@ -51,11 +51,11 @@ namespace SisPro
             get { return _esAlum; }
             set { _esAlum = value; }
         }
-        //public Espera EspId
-        //{
-        //    get { return _espId; }
-        //    set { _espId = value; }
-        //}
+        public Espera Espera
+        {
+            get { return _espId; }
+            set { _espId = value; }
+        }
         public Empleado EmpleadoId
         {
             get { return _empId; }
@@ -97,14 +97,40 @@ namespace SisPro
                 _fecha = Convert.ToDateTime(registro["ac_fecha"].ToString());
                 _inicio = Convert.ToDateTime(registro["ac_inicio"].ToString());
                 _fin = Convert.ToDateTime(registro["ac_fin"].ToString());
-                _esAlum = Convert.ToBoolean(registro["ac_esAlumno"].ToString());
-              _espId = new Espera(int.Parse(registro["ac_esp_id"].ToString()));
+                _esAlum = Convert.ToBoolean(int.Parse(registro["ac_esAlumno"].ToString()));
+                _espId = new Espera(int.Parse(registro["ac_esp_id"].ToString()));
 
                 _empId = new Empleado(int.Parse(registro["ac_emp_id"].ToString()));
                 _cajaId = new Caja(int.Parse(registro["ac_caja_id"].ToString()));
 
             }
+            else
+            {
+                _id = 0;
+                _fecha = new DateTime();
+                _inicio = new DateTime();
+                _fin = new DateTime();
+                _esAlum = false;
+                _espId = new Espera();
+                _empId = new Empleado();
+                _cajaId = new Caja();
+            }
  
+        }
+
+        public bool Agregar()
+        {
+            string instruccion = "insert into AtencionClientes(ac_fecha, ac_inicio, ac_fin, ac_esAlumno, ac_esp_id, ac_emp_id, ac_caja_id) values(@fecha, @inicio, @fin, @esAlumno, @espera, @empleado, @caja)";
+            SqlCommand comando = new SqlCommand(instruccion);
+            comando.Parameters.Add(new SqlParameter("@fecha", _fecha));
+            comando.Parameters.Add(new SqlParameter("@inicio", _inicio));
+            comando.Parameters.Add(new SqlParameter("@fin", _fin));
+            comando.Parameters.Add(new SqlParameter("@esAlumno", _esAlum));
+            comando.Parameters.Add(new SqlParameter("@espera", _espId.ID));
+            comando.Parameters.Add(new SqlParameter("@empleado", _empId.Id));
+            comando.Parameters.Add(new SqlParameter("@caja", _cajaId.Id));
+
+            return EjecutarComando(comando);
         }
 
 

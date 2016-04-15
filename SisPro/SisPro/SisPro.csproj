@@ -34,11 +34,31 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Windows.Design.Extensibility, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Users\Trelloch\Desktop\3er y 4TO CUATRIMESTRE\ProyectoClinica4toCuatri\Clinica\Clinica\bin\Debug\Microsoft.Windows.Design.Extensibility.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Windows.Design.Interaction, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Users\Trelloch\Desktop\3er y 4TO CUATRIMESTRE\ProyectoClinica4toCuatri\Clinica\Clinica\bin\Debug\Microsoft.Windows.Design.Interaction.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Printing" />
+    <Reference Include="System.Windows.Controls.DataVisualization.Toolkit">
+      <HintPath>..\..\..\..\Users\Trelloch\Desktop\3er y 4TO CUATRIMESTRE\ProyectoClinica4toCuatri\Clinica\Clinica\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.DataVisualization.Toolkit.Design.4.0">
+      <HintPath>..\..\..\..\Users\Trelloch\Desktop\3er y 4TO CUATRIMESTRE\ProyectoClinica4toCuatri\Clinica\Clinica\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.Design.4.0.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.DataVisualization.Toolkit.Expression.Design">
+      <HintPath>..\..\..\..\Users\Trelloch\Desktop\3er y 4TO CUATRIMESTRE\ProyectoClinica4toCuatri\Clinica\Clinica\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.Expression.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Input.Toolkit">
+      <HintPath>..\..\..\..\Users\Trelloch\Desktop\3er y 4TO CUATRIMESTRE\ProyectoClinica4toCuatri\Clinica\Clinica\bin\Debug\System.Windows.Controls.Input.Toolkit.dll</HintPath>
+    </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,6 +71,9 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WPFToolkit">
+      <HintPath>..\..\..\..\Users\Trelloch\Desktop\3er y 4TO CUATRIMESTRE\ProyectoClinica4toCuatri\Clinica\Clinica\bin\Debug\WPFToolkit.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -67,10 +90,14 @@
     <Compile Include="Conexion.cs" />
     <Compile Include="Configuracion.cs" />
     <Compile Include="Empleado.cs" />
+    <Compile Include="Globales.cs" />
     <Compile Include="Menu.xaml.cs">
       <DependentUpon>Menu.xaml</DependentUpon>
     </Compile>
     <Compile Include="Ticket.cs" />
+    <Compile Include="Video.xaml.cs">
+      <DependentUpon>Video.xaml</DependentUpon>
+    </Compile>
     <Page Include="Atencion.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -104,6 +131,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Menu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Video.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

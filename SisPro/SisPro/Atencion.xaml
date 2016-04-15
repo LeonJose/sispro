@@ -7,17 +7,17 @@
         <Rectangle x:Name="rt_imagen" HorizontalAlignment="Center" Height="130" Margin="194,19,175,0" Stroke="#FF187DF7" VerticalAlignment="Top" Width="922" RadiusX="6" RadiusY="6"/>
         <Rectangle HorizontalAlignment="Left" Height="450" Margin="125,188,0,0" Stroke="#FF327A8B" VerticalAlignment="Top" Width="396" RadiusX="12" RadiusY="12"/>
         <Label Content="Nombre:" HorizontalAlignment="Left" Margin="143,314,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#FF3884DE"/>
-        <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Height="27" Margin="235,324,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="263" FontSize="20"/>
+        <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Height="27" Margin="235,324,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="263" FontSize="20" IsEnabled="False" TextChanged="txtNumero_TextChanged"/>
         <Label Content="Asunto:" HorizontalAlignment="Left" Margin="143,414,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#FF4E70E6"/>
-        <TextBox x:Name="txtasunto" HorizontalAlignment="Left" Height="98" Margin="225,432,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="273" FontSize="20"/>
-        <Button Content="Enviar Datos" HorizontalAlignment="Left" Height="52" Margin="286,570,0,0" VerticalAlignment="Top" Width="212" FontSize="20" Background="#FF39990C" Foreground="WhiteSmoke" BorderThickness="4" BorderBrush="#FFE6E6E6"/>
-        <DataGrid HorizontalAlignment="Left" Height="220" Margin="565,222,0,0" VerticalAlignment="Top" Width="697" BorderBrush="#FF187DF5" Background="White">
+        <TextBox x:Name="txtAsunto" HorizontalAlignment="Left" Height="98" Margin="225,432,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="273" FontSize="14" TextChanged="txtNumero_TextChanged" KeyUp="txtAsunto_KeyUp"/>
+        <Button x:Name="btnEnviarDatos" Content="Enviar Datos" HorizontalAlignment="Left" Height="52" Margin="286,570,0,0" VerticalAlignment="Top" Width="212" FontSize="20" Background="#FF39990C" Foreground="WhiteSmoke" BorderThickness="4" BorderBrush="#FFE6E6E6" IsEnabled="False" Click="btnEnviarDatos_Click"/>
+        <DataGrid x:Name="dgvListaEspera" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" HeadersVisibility="Column" GridLinesVisibility="None" SelectionUnit="FullRow" HorizontalAlignment="Left" ItemsSource="{Binding TestBinding}" Height="220" Margin="565,222,0,0" VerticalAlignment="Top" Width="697" BorderBrush="#FF187DF5" Background="White">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Nombre" MinWidth="150"/>
-                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Numero" MinWidth="100"/>
-                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Hora de llegada" MinWidth="150"/>
-                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Departamento" MinWidth="150"/>
-                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Matricula" MinWidth="190"/>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding Path= Nombre}" IsReadOnly="True" MinWidth="150"/>
+                <DataGridTextColumn Header="Numero" Binding="{Binding Path= Numero}" IsReadOnly="True" MinWidth="100"/>
+                <DataGridTextColumn Header="Hora de llegada" Binding="{Binding Path= HoraLlegada}"  IsReadOnly="True" MinWidth="150"/>
+                <DataGridTextColumn Header="Departamento" Binding="{Binding Path= Departamento.NombreDepto}" IsReadOnly="True" MinWidth="150"/>
+                <DataGridTextColumn Header="Matricula" Binding="{Binding Path= Matricula}" IsReadOnly="True" MinWidth="190"/>
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="btnSiguiente" Content="" Height="178" Margin="806,460,0,0" VerticalAlignment="Top" Width="188" FontSize="16" BorderThickness="5" BorderBrush="White" HorizontalAlignment="Left" FontFamily="Wide Latin" FontWeight="Bold" FontStyle="Italic"  Opacity="2" Click="btnSiguiente_Click" >
@@ -48,8 +48,8 @@
         <Label Content="Llamar al siguiente" HorizontalAlignment="Left" Margin="617,540,0,0" VerticalAlignment="Top" Height="33" Width="184" Foreground="#FF7C2C2C" FontFamily="Elephant" FontSize="18"/>
         <Label Content="Personas en Espera:" HorizontalAlignment="Left" Margin="565,188,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Modern No. 20" Background="{x:Null}" Foreground="Maroon" RenderTransformOrigin="0.5,0.483"/>
         <Label Content="Numero:" HorizontalAlignment="Left" Margin="143,258,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#FF3884DE"/>
-        <TextBox x:Name="txtNumero" HorizontalAlignment="Left" Height="27" Margin="235,268,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="263"/>
-        <TextBox x:Name="txtHora" HorizontalAlignment="Left" Height="27" Margin="307,382,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="191"/>
+        <TextBox x:Name="txtNumero" HorizontalAlignment="Left" Height="27" Margin="235,268,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="263" IsEnabled="False" TextChanged="txtNumero_TextChanged"/>
+        <TextBox x:Name="txtHora" HorizontalAlignment="Left" Height="27" Margin="307,382,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="191" IsEnabled="False" TextChanged="txtNumero_TextChanged"/>
         <Label Content="Hora de Llegada:" HorizontalAlignment="Left" Margin="143,372,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#FF3884DE"/>
 
     </Grid>

@@ -11,8 +11,8 @@ namespace SisPro
     {
         #region Atributos
 
-        private int _idDepto;
-        private string _nombreDepto;
+        private int _id;
+        private string _nombre;
 
         #endregion
 
@@ -20,13 +20,13 @@ namespace SisPro
 
         public int IdDepto
         {
-            get { return _idDepto; }
-            set { _idDepto = value; }
+            get { return _id; }
+            set { _id = value; }
         }
         public string NombreDepto
         {
-            get { return _nombreDepto; }
-            set { _nombreDepto = value; }
+            get { return _nombre; }
+            set { _nombre = value; }
         }
 
         #endregion
@@ -35,8 +35,8 @@ namespace SisPro
 
         public Departamento()
         {
-            _idDepto= 0;
-            _nombreDepto="";
+            _id= 0;
+            _nombre="";
         }
 
         #endregion
@@ -49,19 +49,19 @@ namespace SisPro
             DataRow registro = LeerRegistro(consulta);
             if (registro != null)
             {
-                _idDepto = idepto;
-                _nombreDepto = registro["dep_nombre"].ToString();
+                _id = idepto;
+                _nombre = registro["dep_nombre"].ToString();
             }
             else
             {
-                _idDepto = 0;
-                _nombreDepto = "";
+                _id = 0;
+                _nombre = "";
             }
         }
 
         public override string ToString()
         {
-            return _nombreDepto.ToString();
+            return _nombre.ToString();
         }
 
         #endregion

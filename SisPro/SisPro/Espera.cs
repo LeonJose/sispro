@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 //using System.Data;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace SisPro
 {
-    class Espera : Conexion
+    public class Espera : Conexion
     {
       
       #region Atributos
@@ -22,7 +23,7 @@ namespace SisPro
       private Departamento _departamento;
       private bool _atendido;
      // private string impresora = "Microsoft XPS Document Writer";
-      private string impresora=new Configuracion(1).Impresora;
+      private string impresora = Globales.conf.Impresora;
       #endregion
 
         #region propiedades
@@ -95,7 +96,32 @@ namespace SisPro
 
         public Espera(int id)
         {
-            string consulta = "";
+            string consulta = "select esp_nombre, esp_numero, esp_fecha, esp_horaLlegada, esp_horaAtencion, esp_matricula, esp_dep_id, esp_atendido from Espera where esp_id="+id;
+            DataRow registro = LeerRegistro(consulta);
+            if (registro != null)
+            {
+                _id = id;
+                _nombre = registro["esp_nombre"].ToString();
+                _numero = registro["esp_numero"].ToString();
+                _fecha = DateTime.Parse(registro["esp_fecha"].ToString());
+                _horaLlegada = DateTime.Parse(registro["esp_horaLlegada"].ToString());
+                _horaAtencion = DateTime.Parse(registro["esp_horaAtencion"].ToString());
+                _matricula = registro["esp_matricula"].ToString();
+                _departamento = new Departamento(int.Parse(registro["esp_dep_id"].ToString()));
+                _atendido = Convert.ToBoolean(registro["esp_atendido"].ToString());
+            }
+            else
+            {
+                _id = 0;
+                _nombre = " ";
+                _numero = " ";
+                _fecha = new DateTime();
+                _horaLlegada = new DateTime();
+                _horaAtencion = new DateTime();
+                _matricula = "";
+                _departamento = new Departamento();
+                _atendido = false;
+            }
         }
 
       public bool AgregarEspera()
@@ -115,7 +141,7 @@ namespace SisPro
 
       public bool AtenderEspera()
       {
-          string instruccion = "update Espera set esp_atendido=1 where esp_id=" + _id;
+          string instruccion = "update Espera set esp_atendido="+_atendido+" where esp_id=" + _id;
           SqlCommand comando = new SqlCommand(instruccion);
 
           return EjecutarComando(comando);
