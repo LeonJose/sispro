@@ -77,9 +77,13 @@ namespace SisPro
                 {
 
                     myCheckBox.IsChecked = true;
-                    var s = new MyData { Nombre = siguiente.Nombre, Numero = siguiente.Numero, CajaNumero = "Favor de pasar a Caja: "+Globales.c.Numero.ToString(), Departamento = Globales.c.Departamento.NombreDepto };
+                    var s = new MyData { Nombre = siguiente.Nombre, Numero = siguiente.Numero, CajaNumero = "Favor de pasar a Caja: " + Globales.c.Numero.ToString(), Departamento = Globales.c.Departamento.NombreDepto };
                     this.DataContext = s;
 
+                }
+                else
+                {
+                    myCheckBox.IsChecked = false;
                 }
                 if (!Element.IsBuffering)
                 {
