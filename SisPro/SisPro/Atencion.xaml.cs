@@ -53,7 +53,7 @@ namespace SisPro
 
         public void RefrescarGrid()
         {
-            dgvListaEspera.Items.Clear();
+            BindingOperations.ClearAllBindings(dgvListaEspera);
             lista = Listados.ListaDeEspera();
             if (lista.Count > 0)
                 dgvListaEspera.ItemsSource = lista;
