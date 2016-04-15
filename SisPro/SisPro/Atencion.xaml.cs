@@ -23,7 +23,7 @@ namespace SisPro
         {
             InitializeComponent();
             headerlogo();
-            txtnombre.Focus();
+            txtNombre.Focus();
         }
         private void headerlogo()
         {
@@ -36,6 +36,11 @@ namespace SisPro
             ImageBrush _ib = new ImageBrush();
             _ib.ImageSource = _bi;
             rt_imagen.Fill = _ib;
+        }
+
+        private void btnSiguiente_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Hola");
         }
     }
 }

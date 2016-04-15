@@ -1,19 +1,6 @@
 ﻿<Window x:Class="SisPro.Login"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-<<<<<<< HEAD
-        Title="Login" Height="300" Width="472.314">
-    <Grid Margin="0,0,0,-4">
-        <Button x:Name="btniniciarsesion" Content="Iniciar Sesion" HorizontalAlignment="Left" Margin="72,224,0,0" VerticalAlignment="Top" Width="155" Height="39" Background="{x:Null}" BorderBrush="#FF12EA74"/>
-        <Label Content="Nombre del Usuario :" HorizontalAlignment="Left" Margin="51,119,0,0" VerticalAlignment="Top" FontFamily="Times New Roman"/>
-        <TextBox x:Name="txtnombre" HorizontalAlignment="Left" Height="23" Margin="198,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="215"/>
-        <Label Content="Introduce tu contrasena :" HorizontalAlignment="Left" Margin="51,167,0,0" VerticalAlignment="Top" FontFamily="Times New Roman"/>
-        <TextBox x:Name="txtcontrasena" HorizontalAlignment="Left" Height="23" Margin="198,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="211"/>
-        <Label Content="" HorizontalAlignment="Center" Margin="117,10,76,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="18"/>
-        <Button x:Name="btncancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="254,224,0,0" VerticalAlignment="Top" Width="155" Height="39" BorderBrush="#FF12EA74" Background="{x:Null}"/>
-        <GroupBox Header="Inicia sesion para acceder al sistema" HorizontalAlignment="Left" Margin="10,71,0,0" VerticalAlignment="Top" Height="132" Width="444" BorderBrush="#FF0C76E0" FontFamily="Times New Roman"/>
-        <Rectangle HorizontalAlignment="Left" Height="66" Stroke="#FF12EA74" VerticalAlignment="Top" Width="100" Margin="10,0,0,0"/>
-=======
         Title="Login" Height="429.005" Width="630.524" Background="#FFF2FFF2" WindowStartupLocation="CenterScreen">
     <Grid Margin="0,0,2,-4" Background="#FFF2FFF2">
         <Grid.ColumnDefinitions>
@@ -29,7 +16,7 @@
         <Button x:Name="btncancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="360,295,0,0" VerticalAlignment="Top" Width="190" Height="54" BorderBrush="#FF12EA74" Background="White" FontSize="20"/>
         <GroupBox Header="Inicia sesion para acceder al sistema" HorizontalAlignment="Left" Margin="35,128,0,0" VerticalAlignment="Top" Height="236" Width="547" BorderBrush="#FF0C76E0" FontSize="20"/>
         <Rectangle x:Name="rt_imagen" HorizontalAlignment="Left" Height="101" Margin="10,10,0,0" Stroke="#FF12EA74" VerticalAlignment="Top" Width="601" RadiusX="6" RadiusY="6"/>
->>>>>>> 133b3c56c83ea5ef1f50a2bddae7a13434519337
+
 
     </Grid>
 </Window>

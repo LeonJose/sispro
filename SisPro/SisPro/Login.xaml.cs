@@ -22,8 +22,6 @@ namespace SisPro
         public Login()
         {
             InitializeComponent();
-<<<<<<< HEAD
-=======
             headerlogo();
             txtnombre.Focus();
         }
@@ -38,7 +36,6 @@ namespace SisPro
             ImageBrush _ib = new ImageBrush();
             _ib.ImageSource = _bi;
             rt_imagen.Fill = _ib;
->>>>>>> 133b3c56c83ea5ef1f50a2bddae7a13434519337
         }
     }
 }
